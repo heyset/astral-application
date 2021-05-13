@@ -3,6 +3,7 @@
   --medium-green: #303b3f;
   --light-green: #00acc1;
   --light-cyan: #4dd0e1;
+  --light-cyan-channels: 77, 208, 225;
   --light-cyan-hover: #0097a7;
   --white: #eeeeee;
   --black: #111414;
@@ -32,6 +33,16 @@ p:last-child {
   margin-bottom: 0;
 }
 
+a {
+  color: var(--light-cyan);
+  transition: color 350ms;
+  font-weight: 500;
+}
+
+a:hover {
+  color: var(--light-cyan-hover);
+}
+
 header h1 {
   font-weight: 500;
   height: 480px;
@@ -49,11 +60,37 @@ header {
   padding-bottom: 80px;
 }
 
+.astral-logo {
+  position: relative;
+}
+
+.astral-logo:hover img {
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(var(--light-cyan-channels), 0));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 10px rgba(var(--light-cyan-channels), 0.8));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 5px rgba(var(--light-cyan-channels), 0));
+  }
+}
+
 .wrapper {
   max-width: 920px;
   padding: 0 36px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.wrapper-larger {
+  max-width: 1180px;
 }
 
 section {
@@ -103,4 +140,68 @@ section video {
   margin-top: 28px;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .picture {
+    width: 100%;
+  }
+
+  header h1 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .wrapper {
+    padding: 0 24px;
+  }
+}
+
+ul {
+  padding: 0 36px;
+}
+
+ul li {
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.print-gallery {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.print-gallery img {
+  min-width: 240px;
+  width: 30%;
+}
+
+.testimonials {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 42px;
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  max-width: 240px;
+  list-style: none;
+}
+
+.testimonial-card img {
+  width: 80%;
+  border-radius: 50%;
+  display: block;
+}
+
+footer {
+  background-color: var(--black);
+  padding: 48px 0;
 }
