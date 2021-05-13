@@ -1,0 +1,19 @@
+:root {
+  --dark-cyan: #202729;
+  --medium-green: #303b3f;
+  --light-green: #00acc1;
+  --light-cyan: #4dd0e1;
+  --light-cyan-hover: #0097a7;
+  --white: #eeeeee;
+  --black: #111414;
+  --text-muted: #8a999e;
+  --text-muted-hover: #adb6b8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
